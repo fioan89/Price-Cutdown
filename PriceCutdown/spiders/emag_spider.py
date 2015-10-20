@@ -12,4 +12,7 @@ class EmagSpider(scrapy.Spider):
 
     def parse(self, response):
         for url in response.xpath('//form/h2/a/@href').extract():
-            yield scrapy.Request(urlparse.urljoin(self.base_product_url, url), callback=self.parse)
+            yield scrapy.Request(response.urljoin(url), callback=self.parse)
+
+    def parse_dir_contents(self, response):
+        pass
