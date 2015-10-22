@@ -49,10 +49,10 @@ NEWSPIDER_MODULE = 'PriceCutdown.spiders'
 
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
-# DOWNLOADER_MIDDLEWARES = {
-#    # 'PriceCutdown.middlewares.MyCustomDownloaderMiddleware': 543,
-#     'scrapy.contrib.downloadermiddleware.httpproxy.HttpProxyMiddleware': 1,
-# }
+DOWNLOADER_MIDDLEWARES = {
+    'scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware' : None,
+    'PriceCutdown.dmiddlewares.rotate_useragent.RotateUserAgentMiddleware': 400
+}
 
 # Enable or disable extensions
 # See http://scrapy.readthedocs.org/en/latest/topics/extensions.html
