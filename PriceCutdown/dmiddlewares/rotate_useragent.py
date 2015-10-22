@@ -1,7 +1,7 @@
 __author__ = 'fauri'
 
 import random
-from scrapy.contrib.downloadermiddleware.useragent import UserAgentMiddleware
+from scrapy.downloadermiddlewares.useragent import UserAgentMiddleware
 
 # http://www.useragentstring.com/pages/useragentstring.php
 USER_AGENTS = [
