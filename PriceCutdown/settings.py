@@ -47,11 +47,19 @@ COOKIES_ENABLED=False
 #    'PriceCutdown.middlewares.MyCustomSpiderMiddleware': 543,
 #}
 
+# Retry many times since proxies often fail
+RETRY_TIMES = 10
+# Retry on most error codes since proxies fail for different reasons
+RETRY_HTTP_CODES = [500, 503, 504, 400, 403, 404, 408]
+
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
     'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
     'PriceCutdown.dmiddlewares.rotate_useragent.RotateUserAgentMiddleware': 400,
+    'scrapy.downloadermiddlewares.retry.RetryMiddleware': 90,
+    'PriceCutdown.dmiddlewares.proxy.RandomProxy': 100,
+    'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': 110,
 
 }
 
