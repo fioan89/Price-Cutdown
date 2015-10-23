@@ -1,6 +1,6 @@
 __author__ = 'fauri'
 
-from PriceCutdown.items import EmagItem
+from PriceCutdown.items import ProductItem
 
 import scrapy
 
@@ -27,7 +27,7 @@ class EmagSpider(scrapy.Spider):
         :return: a EmagInstance if found.
         '''
         for content in response.xpath('//div[@class="big-box" and @itemprop="offerDetails"]'):
-            item = EmagItem()
+            item = ProductItem()
             item['product_owner'] = 'emag.ro'
             item['product_name'] = content.xpath('//div[@id="product-offer"]/div[@id="offer-title"]/h1/text()').extract()
             item['product_price'] = content.xpath('//span[@itemprop="price" and @content]/@content').extract()

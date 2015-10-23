@@ -8,7 +8,7 @@
 import scrapy
 
 
-class EmagItem(scrapy.Item):
+class ProductItem(scrapy.Item):
     product_owner = scrapy.Field()
     product_name = scrapy.Field()
     product_price = scrapy.Field()

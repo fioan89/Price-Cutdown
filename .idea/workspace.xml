@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8e42129-9fa7-4b1e-b6a6-80ce02f0632b" name="Default" comment="Save th">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PriceCutdown/spiders/cel_spider.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PriceCutdown/spiders/emag_spider.py" afterPath="$PROJECT_DIR$/PriceCutdown/spiders/emag_spider.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PriceCutdown/items.py" afterPath="$PROJECT_DIR$/PriceCutdown/items.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PriceCutdown/dmiddlewares/proxy.py" afterPath="$PROJECT_DIR$/PriceCutdown/dmiddlewares/proxy.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run_scrapy_commands.py" afterPath="$PROJECT_DIR$/run_scrapy_commands.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -53,14 +55,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="emag_spider.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="emag_spider.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PriceCutdown/spiders/emag_spider.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.12648809">
+            <state vertical-scroll-proportion="0.0">
               <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding>
-                <element signature="e#22#61#0" expanded="true" />
+                <element signature="e#22#64#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pipelines.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PriceCutdown/pipelines.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cel_spider.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PriceCutdown/spiders/cel_spider.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -75,11 +97,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="items.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="items.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PriceCutdown/items.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.25297618">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -129,8 +151,9 @@
         <option value="$PROJECT_DIR$/PriceCutdown/dmiddlewares/proxy.py" />
         <option value="$PROJECT_DIR$/PriceCutdown/settings.py" />
         <option value="$PROJECT_DIR$/items.json" />
-        <option value="$PROJECT_DIR$/PriceCutdown/items.py" />
         <option value="$PROJECT_DIR$/PriceCutdown/spiders/emag_spider.py" />
+        <option value="$PROJECT_DIR$/PriceCutdown/spiders/cel_spider.py" />
+        <option value="$PROJECT_DIR$/PriceCutdown/items.py" />
       </list>
     </option>
   </component>
@@ -552,7 +575,13 @@
       <option name="project" value="LOCAL" />
       <updated>1445599776631</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Cleanup.">
+      <created>1445599817032</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1445599817032</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -604,7 +633,8 @@
     <MESSAGE value="Starting work on proxy middleware/" />
     <MESSAGE value="Increase delay to 3 seconds" />
     <MESSAGE value="Update the item container with a new key." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update the item container with a new key." />
+    <MESSAGE value="Cleanup." />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleanup." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -620,24 +650,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/run_scrapy_commands.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <element signature="e#22#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/items.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/PriceCutdown/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1019,21 +1031,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PriceCutdown/items.py">
+    <entry file="file://$PROJECT_DIR$/PriceCutdown/spiders/cel_spider.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/PriceCutdown/spiders/emag_spider.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12648809">
+        <state vertical-scroll-proportion="0.0">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding>
-            <element signature="e#22#61#0" expanded="true" />
+            <element signature="e#22#64#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PriceCutdown/pipelines.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PriceCutdown/items.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25297618">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
