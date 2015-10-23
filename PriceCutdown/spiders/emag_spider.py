@@ -29,6 +29,7 @@ class EmagSpider(scrapy.Spider):
         '''
         for content in response.xpath('//div[@class="big-box" and @itemprop="offerDetails"]'):
             item = EmagItem()
+            item['product_owner'] = 'emag.ro'
             item['product_name'] = content.xpath('//div[@id="product-offer"]/div[@id="offer-title"]/h1/text()').extract()
             item['product_price'] = content.xpath('//span[@itemprop="price" and @content]/@content').extract()
             item['product_link'] = response.url
