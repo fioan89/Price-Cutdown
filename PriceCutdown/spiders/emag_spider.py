@@ -1,9 +1,8 @@
-from PriceCutdown.items import EmagItem
-
 __author__ = 'fauri'
 
+from PriceCutdown.items import EmagItem
+
 import scrapy
-import urlparse
 
 
 class EmagSpider(scrapy.Spider):
