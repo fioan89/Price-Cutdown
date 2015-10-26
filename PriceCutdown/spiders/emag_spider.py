@@ -23,8 +23,8 @@ class EmagSpider(scrapy.Spider):
 
     def parse_page_content(self, response):
         '''
-        Parses the response and tries to extract the EmagItem instance
-        :return: a EmagInstance if found.
+        Parses the response and tries to extract the ProductItem instance
+        :return: a ProductItem if found.
         '''
         for content in response.xpath('//div[@class="big-box" and @itemprop="offerDetails"]'):
             item = ProductItem()
