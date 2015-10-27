@@ -14,6 +14,12 @@ BOT_NAME = 'PriceCutdown'
 SPIDER_MODULES = ['PriceCutdown.spiders']
 NEWSPIDER_MODULE = 'PriceCutdown.spiders'
 
+# postgres connection data
+PG_DATABASE = 'pricecutdowndb'
+PG_USER = 'postgres'
+PG_PASSWORD = None
+PG_HOST = '192.168.42.65'
+PG_PORT = 5432
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'PriceCutdown (+http://www.yourdomain.com)'

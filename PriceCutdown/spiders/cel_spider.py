@@ -34,7 +34,7 @@ class CelSpider(scrapy.Spider):
         for content in response.xpath('//div[@class="prod_info"]'):
             item = ProductItem()
             item['product_owner'] = 'cel.ro'
-            item['product_name'] = content.xpath('//div[@class="pageHeading"]/h2/text()').extract()
-            item['product_price'] = content.xpath('//div[@class="pret_info"]/div[@itemprop="offers"]/b/text()').extract()
+            item['product_name'] = content.xpath('//div[@class="pageHeading"]/h2/text()').extract()[0]
+            item['product_price'] = content.xpath('//div[@class="pret_info"]/div[@itemprop="offers"]/b/text()').extract()[0]
             item['product_link'] = response.url
             return item
