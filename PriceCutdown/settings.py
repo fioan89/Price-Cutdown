@@ -21,6 +21,11 @@ PG_PASSWORD = None
 PG_HOST = '192.168.42.65'
 PG_PORT = 5432
 
+# a file path containing urls splited by new line for products from cel.ro to scrap
+CEL_RO_REQUESTS_FILE = ''
+# a file path containing urls splited by new line for products from emag.ro to scrap
+EMAG_RO_REQUESTS_FILE = ''
+
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'PriceCutdown (+http://www.yourdomain.com)'
 
