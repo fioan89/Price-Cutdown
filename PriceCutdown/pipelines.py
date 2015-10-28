@@ -6,7 +6,7 @@ import psycopg2
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 
-CHECK_PROD_ID = '''SELECT prod_id FROM products WHERE url LIKE %s'''
+CHECK_PROD_ID = '''SELECT prod_id FROM products WHERE name LIKE %s and owner like %s'''
 INSERT_PRODUCT = '''INSERT INTO products (owner, name, url) VALUES (%s, %s, %s)'''
 INSERT_PRICE = '''INSERT INTO prices (prod_id, price, date_of_scraping) VALUES (%s, %s, now())'''
 
@@ -43,12 +43,13 @@ class PricecutdownSQLitePipeline(object):
 
     def process_item(self, item, spider):
         # check if item with name exists in products. if not, insert it
-        self.cursor.execute(CHECK_PROD_ID, (item['product_link'],))
+        self.cursor.execute(CHECK_PROD_ID, (item['product_name'], item['product_owner']))
         product_tuple = self.cursor.fetchone()
         if not product_tuple or not product_tuple[0]:
             self.cursor.execute(INSERT_PRODUCT, (item['product_owner'], item['product_name'], item['product_link']))
-            self.cursor.execute(CHECK_PROD_ID, (item['product_link'],))
+            self.cursor.execute(CHECK_PROD_ID, (item['product_name'], item['product_owner']))
             product_tuple = self.cursor.fetchone()
+
         # insert prices
         self.cursor.execute(INSERT_PRICE, (product_tuple[0], item['product_price']))
         self.connection.commit()
