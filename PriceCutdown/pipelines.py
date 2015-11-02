@@ -30,7 +30,7 @@ class PricecutdownSQLitePipeline(object):
         )
 
     def open_spider(self, spider):
-        # TODO: check if tables exist if not execute the follwoings:
+        # TODO: check if tables exist if not execute the followings:
         # CREATE TABLE products (prod_id   SERIAL PRIMARY KEY, owner VARCHAR(100) NOT NULL, name      VARCHAR(4000) NOT NULL, url       VARCHAR(4000) NOT NULL);
         # CREATE TABLE prices (price_id    SERIAL PRIMARY KEY, prod_id     INTEGER REFERENCES products (prod_id), price       NUMERIC(14,4), date_of_scraping  TIMESTAMP);
         self.connection = psycopg2.connect(database=self.database_name, user=self.database_user,
