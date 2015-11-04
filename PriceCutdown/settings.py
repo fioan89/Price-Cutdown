@@ -21,6 +21,13 @@ PG_PASSWORD = None
 PG_HOST = '192.168.42.65'
 PG_PORT = 5432
 
+GMAIL_USERNAME = ''
+GMAIL_PASSWORD = ''
+
+SEND_TO_LIST = [""]
+
+SMTP_HTTP_PROXY = ''
+SMTP_HTTP_PROXY_PORT = 8080
 # a file path containing urls splited by new line for products from cel.ro to scrap
 CEL_RO_REQUESTS_FILE = ''
 # a file path containing urls splited by new line for products from emag.ro to scrap
