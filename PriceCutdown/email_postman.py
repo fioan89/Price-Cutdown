@@ -21,7 +21,7 @@ def recvline(sock):
     return line
 
 
-class ProxSMTP(smtplib.SMTP):
+class ProxySMTP(smtplib.SMTP):
     def __init__(self, host='', port=0, p_address='', p_port=0, local_hostname=None,
                  timeout=socket._GLOBAL_DEFAULT_TIMEOUT):
         """Initialize a new instance.
@@ -81,7 +81,10 @@ class GmailPostMan():
         if self.gmail_username.endswith('@gmail.com'):
             self.gmail_username = self.gmail_username.split('@')[0]
         self.email_from = '{0}@gmail.com'.format(self.gmail_username)
-        self.smt_server = ProxSMTP(GMAIL_SMTP_HOST, GMAIL_SMTP_PORT, p_address=proxy_address, p_port=proxy_port)
+        self.smt_server = ProxySMTP(GMAIL_SMTP_HOST, GMAIL_SMTP_PORT, p_address=proxy_address, p_port=proxy_port)
+        self.smt_server.ehlo()
+        self.smt_server.starttls()
+        self.smt_server.login(self.gmail_username, self.gmail_password)
 
     def send_to(self, subject='', message_body='', to=None):
         """
@@ -94,10 +97,7 @@ class GmailPostMan():
         header = ("From: %s\r\nTo: %s\r\nSubject: %s\r\n\r\n"
                   % (self.email_from, ", ".join(to), subject))
         message = header + message_body + "\r\n"
-        self.smt_server.ehlo()
-        self.smt_server.starttls()
-        self.smt_server.login(self.gmail_username, self.gmail_password)
-        try:
-            self.smt_server.sendmail(self.email_from, to, message)
-        finally:
+        self.smt_server.sendmail(self.email_from, to, message)
+
+    def close_postman(self):
             self.smt_server.quit()
